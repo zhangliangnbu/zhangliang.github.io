@@ -48,10 +48,9 @@ categories:
 
 ## GitHub上创建Github Pages项目
 
-* 用户或组织主页。创建一个名称为`{用户名称}.github.io`的新项目，创建`gh-pages`分支，在项目`Settings->GitHub Pages`中设置`Source`为`gh-pages`分支。然后就可以用`https://{用户名称}.github.io`去访问了。
-* 项目主页。创建任意名称的项目，创建`gh-pages`分支，在项目`Settings->GitHub Pages`中设置`Source`为`gh-pages`分支。然后就可以用`http://{用户名称}.github.io/{项目名称}`去访问了。
-
-> 由于有两份代码需要处理，一份是博客源代码，一份是部署后生成的静态网站的代码，所以需要开分支用于分别存储，这里我们用`master`分支存储源代码，用`gh-pages`分支管理部署后的代码。
+* 用户或组织主页。创建一个名称为`{用户名称}.github.io`的新项目。然后就可以用`https://{用户名称}.github.io`去访问了。
+* 项目主页。创建任意名称的项目，在项目`Settings->GitHub Pages`中设置`Source`为`master`分支。然后就可以用`http://{用户名称}.github.io/{项目名称}`去访问了。
+* 创建`blog-src`分支。由于有两份代码需要处理，一份是博客源代码，一份是部署后生成的静态网站的代码，所以需要开分支用于分别存储，这里我们用`master`分支存储部署后的代码，用`blog-src`分支存储源代码。
 
 
 
@@ -80,6 +79,8 @@ hexo server
 ```bash
 cd {博客名}
 git init
+# 在blog-src分支上编辑
+git checkout -b blog-src
 # 个人或组织主页
 git remote add origin git@github.com:{用户名}.git
 # 项目主页

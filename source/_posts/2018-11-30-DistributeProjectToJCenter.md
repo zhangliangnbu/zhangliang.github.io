@@ -12,16 +12,12 @@ categories:
 
 # 简介
 
-JFrog
-
-Bintrary
-
-**JCenter**。由`bintray.com`维护。
+JFrog、Bintrary、**JCenter**。由`bintray.com`维护。
 
 * 官网： https://bintray.com/bintray/jcenter
 * 仓库地址：https://jcenter.bintray.com/
 
-
+// todo
 
 ---
 
