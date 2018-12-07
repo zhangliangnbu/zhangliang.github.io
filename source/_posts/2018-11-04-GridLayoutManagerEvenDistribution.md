@@ -132,7 +132,15 @@ view.iv_image.layoutParams.height = ivSize
 修改EvenItemDecoration代码如下：
 
 ```kotlin
-    class EvenItemDecoration(private val space: Int, private val column: Int) : RecyclerView.ItemDecoration() {
+// MainActivity中，设置间隙为20dp
+        rv_items.apply {
+            layoutManager = GridLayoutManager(context, 4, RecyclerView.VERTICAL, false)
+            addItemDecoration(EvenItemDecoration(dp2px(context, 20), 4))
+            adapter = imageAdapter
+        }
+
+// 修改EvenItemDecoration
+	class EvenItemDecoration(private val space: Int, private val column: Int) : RecyclerView.ItemDecoration() {
         override fun getItemOffsets(outRect: Rect, view: View, parent: RecyclerView, state: RecyclerView.State) {
             outRect.left = space
             outRect.right = space
@@ -141,10 +149,9 @@ view.iv_image.layoutParams.height = ivSize
 ```
 运行结果如下：
 
-![有间隔的Grid](https://upload-images.jianshu.io/upload_images/2658578-e1a49131148182be.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+![有间隔的Grid](/images/gridlayout_even_example2.png)
 
-通过`Layout Inspector`查看每个图片的左右位置，第一行图片的`mLeft`分别为35（0 +35）、395（360+35）、755（720+35）、1115（1080+35），对应的mRight分别是325（360-35）、685（720-35）、1045（1080-35）、1405（1440-35）。
-说明设置的间隙的确占用了对应图片之前分配的空间。
+通过`Layout Inspector`查看每个图片的左右位置，每个图片的大小为220，左右间隙都为70(px/dp=3.5)，说明设置的间隙会占用图片之前分配的空间。
 
 最后，根据以上机制，不难理解`EvenItemDecoration`中的代码。
 
