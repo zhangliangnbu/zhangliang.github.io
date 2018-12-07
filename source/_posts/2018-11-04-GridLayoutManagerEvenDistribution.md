@@ -58,11 +58,11 @@ class MainActivity : AppCompatActivity() {
     class EvenItemDecoration(private val space: Int, private val column: Int) : RecyclerView.ItemDecoration() {
         override fun getItemOffsets(outRect: Rect, view: View, parent: RecyclerView, state: RecyclerView.State) {
             val position = parent.getChildAdapterPosition(view)
-            // 每列分配的padding大小，包括左padding和右padding，如果图片足够宽则padding为0
+            // 每列分配的间隙大小，包括左间隙和右间隙
             val colPadding = space * (column + 1) / column
             // 列索引
             val colIndex = position % column
-            // 列左、右padding。先计算每列的左padding，然后找出规律，右padding=space-左padding
+            // 列左、右空隙。右间隙=space-左间隙
             outRect.left = space * (colIndex + 1) - colPadding * colIndex
             outRect.right = colPadding * (colIndex + 1) - space * (colIndex + 1)
             // 行间距
@@ -88,7 +88,7 @@ class MainActivity : AppCompatActivity() {
 其中需要注意是
 1. 图片的宽度在布局和代码中不能写死，需要自适应。
 2. 在代码（Adapter）中根据屏幕宽度来计算图片高度。
-3. 在ItemDecoration中计算每列的左右padding。
+3. 在ItemDecoration中计算每列的左右间隙。
 
 -- -- --
 
@@ -98,12 +98,9 @@ class MainActivity : AppCompatActivity() {
 **GridLayoutManger在绘制子View的时候，会先为它们分配固定的空间**。
 比如，我们这里是4列，则每列分配父布局宽度（这里是屏幕宽度） / 4的宽度大小的空间，每列占据的宽度相等。
 
-每列中包括图片和padding，如果图片的宽度大于列宽，则padding为零，否则每列会分配宽度为（列宽-图片宽）的padding。padding包括左、右padding。
-
-![](/Users/zhangliang/Projects/Blog/hexo-blog/source/images/gridlayout_col.png)
-
-1. 每个图片会占据自己的空间，且不会超出这个空间。如果超出了，比如设置了很大的固定宽度，则超出的部分会被遮盖。
-2. 如果使用ItemDecoration设置间隔，则间隔会占用当前图片的空间，图片会被压缩。
+1. 每列由图片和空隙组成。空隙包括左空隙和右空隙，分布在图片的左右。
+2. 每列中的图片会局限在列分配的空间内，不会超出这个空间。如果图片宽度小于列宽，则剩余的宽度会分配给空隙；如果图片的宽度大于列宽，则不会有空隙，且图片超出列的部分会被遮盖。
+3. 如果使用ItemDecoration设置间隙，则间隙不会被压缩，如果图片过宽，则会占用当前图片的空间，图片会被压缩。
 
 **示例一-设置固定大宽度**
 在Adapter代码中设置图片的宽度并在去掉ItemDecoration
@@ -147,7 +144,7 @@ view.iv_image.layoutParams.height = ivSize
 ![有间隔的Grid](https://upload-images.jianshu.io/upload_images/2658578-e1a49131148182be.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
 
 通过`Layout Inspector`查看每个图片的左右位置，第一行图片的`mLeft`分别为35（0 +35）、395（360+35）、755（720+35）、1115（1080+35），对应的mRight分别是325（360-35）、685（720-35）、1045（1080-35）、1405（1440-35）。
-说明设置的间隔的确占用了对应图片之前分配的空间。
+说明设置的间隙的确占用了对应图片之前分配的空间。
 
 最后，根据以上机制，不难理解`EvenItemDecoration`中的代码。
 
