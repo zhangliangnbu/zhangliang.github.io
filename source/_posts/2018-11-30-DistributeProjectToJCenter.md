@@ -7,7 +7,7 @@ tags:
 - Maven
 - Jcenter
 categories:
-- 工具
+- 其他
 ---
 
 # 简介

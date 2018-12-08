@@ -6,7 +6,7 @@ tags:
 - Gradle
 - Build
 categories:
-- Gradle
+- 其他
 ---
 
 # 前言

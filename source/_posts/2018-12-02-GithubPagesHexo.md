@@ -5,7 +5,7 @@ tags:
 - GitHub Pages
 - Hexo
 categories:
-- 工具
+- 其他
 ---
 
 # GitHub Pages
@@ -118,6 +118,14 @@ deploy:
 
 默认主题是`landscape`,可以配置`NexT`主题，详细操作请见[主题配置文档](http://theme-next.iissnan.com/getting-started.html)
 
+
+
+## 版权声明
+
+请见[Hexo文章末尾添加版权信息](http://stevenshi.me/2017/05/26/hexo-add-copyright/)
+
+
+
 ---
 
 <br>
@@ -128,3 +136,4 @@ deploy:
 2. [官网-Hexo](https://hexo.io/zh-cn/)
 3. [NexT](https://github.com/theme-next/hexo-theme-next)
 4. [NexT配置](http://theme-next.iissnan.com/theme-settings.html#categories-page)
+5. [Hexo文章末尾添加版权信息](http://stevenshi.me/2017/05/26/hexo-add-copyright/)

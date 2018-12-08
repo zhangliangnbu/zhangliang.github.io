@@ -87,7 +87,10 @@ google_analytics: UA-127809814-1
 
 # 字数和阅读时长统计
 symbols_count_time:
-  symbols: true
-  time: true
+  symbols: false
+  time: false
   total_symbols: true
   total_time: true
+
+# 版权协议
+creative_commons: by-nc-sa
