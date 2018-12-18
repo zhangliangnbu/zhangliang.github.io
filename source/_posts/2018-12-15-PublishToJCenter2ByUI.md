@@ -90,7 +90,7 @@ task sourcesJar(type: Jar) {
 }
 ```
 
-然后执行`./gradlew nicelogger:sourcesJa`，就可以生成Java源码文件，位于`nicelogger/build/libs/`中。
+然后执行`./gradlew nicelogger:sourcesJar`，就可以生成Java源码文件，位于`nicelogger/build/libs/`中。
 
 
 
@@ -99,7 +99,7 @@ task sourcesJar(type: Jar) {
 接着在`nicelogger`的`build.gradle`最后添加如下代码，建立生成所需文件的任务
 
 ```groovy
-// 生成Javadoc源码文件
+// 生成Javadoc文件
 task javadoc(type: Javadoc) {
     failOnError false
     source = android.sourceSets.main.java.sourceFiles
@@ -113,7 +113,7 @@ task javadocJar(type: Jar, dependsOn: javadoc) {
 }
 ```
 
-然后执行`./gradlew nicelogger:javadocJar`，就可以生成Javadoc源码文件，位于`nicelogger/build/libs/`中。
+然后执行`./gradlew nicelogger:javadocJar`，就可以生成Javadoc文件，位于`nicelogger/build/libs/`中。
 
 
 
