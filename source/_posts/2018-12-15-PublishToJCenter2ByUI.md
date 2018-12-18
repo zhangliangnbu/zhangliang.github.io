@@ -1,5 +1,5 @@
 ---
-title: 发布项目到JCenter仓库2-UI手动上传
+title: Bintray项目发布-手动
 date: 2018-12-15 21:09:18
 tags:
 - Maven
@@ -15,35 +15,30 @@ categories:
 
 **发布流程**。参考上一篇文章，完整发布流程如下：
 
-1. 定义参数。项目名、仓库名、Package名、POM文件参数等。
-2. 本地创建项目。创建待发布项目并上传Github，或者直接从Github上fork一个项目。
-3. Bintray平台准备工作。创建Bintray账号、仓库、Package、版本。
-4. 本地生成项目构件。生成待发布的构件文件(包括POM文件)。
-5. 发布到Bintray。上传和发布本地构件文件到Bintray平台。
-6. 发布到JCenter。发布Bintray平台上的项目到JCenter。
+1. 准备工作。定义参数；准备本地待发布项目；配置Bintray平台账号、仓库、Package、版本。
+2. 生成构件文件。本地生成待发布的构件文件(包括POM文件)。
+3. 发布到Bintray。上传和发布本地构件文件到Bintray平台。
+4. 发布到JCenter。发布Bintray平台上的项目到JCenter。
 
 **源码地址**。本文涉及到的`nicelogger`项目Github地址：https://github.com/zhangliangnbu/nice-logger
-
-<br>
 
 ---
 
 # 准备工作
 
-参考上一篇文章，如果已经做了，可以跳过。
+参考上一篇文章，如果已经做了，可以跳过。默认你已经有了一个本地项目，已经创建了Bintray平台账号和Maven仓库。
 
 **定义参数**
 
-- 项目名称。`nicelogger`。
 - Bintray平台仓库名称。`android`。
 - Bintray平台Package名称。`nicelogger`。
 - POM文件`groupId`。`com.liang.android`。
 - POM文件`artifactId`。`nicelogger`。
 - POM文件`version`。取`0.0.1`。
 
-**本地创建项目**。创建待发布工程和名为`nicelogger`的Library并上传Github。
+**准备本地项目**。略。
 
-**Bintray平台准备工作**。根据定义的参数创建仓库、Package、版本。
+**配置Bintray平台**。根据参数创建Package和版本。
 
 <br>
 
@@ -176,8 +171,6 @@ task createPom {
 
 生成四个文件后，可以把它们放在一个文件夹里，方面之后的上传操作。
 
-<br>
-
 ---
 
 # 发布到Bintray
@@ -233,7 +226,7 @@ dependencies {
 }
 ```
 
-<br>
+
 
 ---
 
@@ -257,22 +250,12 @@ JCenter仓库地址。`http://jcenter.bintray.com/{地址化的groupId}`，`地�
 
 终于写完了一个完整的流程，O(∩_∩)O。
 
-<br>
-
 ----
 
 # 参考
 
-1. [JCenter是什么](https://www.geekhub.cn/a/1295.html)
-2. [Bintray官网](https://bintray.com)
-3. [JCenter仓库](https://jcenter.bintray.com/)
-4. [JFrog用户指南](https://www.jfrog.com/confluence/display/BT/Introduction)
-5. [Apach Maven](https://maven.apache.org/index.html)
-6. [使用Gradle插件上传Artifacts到Bintrary](https://github.com/bintray/gradle-bintray-plugin#readme)
-7. [使用Gradle插件上传示例](https://github.com/bintray/bintray-examples/tree/master/gradle-bintray-plugin-examples)
-8. [博客-上传Gradle项目到Maven仓库](https://blog.csdn.net/xiangzhihong8/article/details/53869957)
-9. [从Travis到Bintray](https://www.jianshu.com/p/905411bf4f8f)
-
-<br>
+1. [Bintray官网](https://bintray.com)
+2. [JCenter仓库](https://jcenter.bintray.com/)
+3. [JFrog用户指南](https://www.jfrog.com/confluence/display/BT/Introduction)
 
 ---
