@@ -12,9 +12,7 @@ categories:
 
 照着官方[get-started](https://flutter.io/get-started/install/)教程做，略作补充。
 
--- -- --
-
-<br>
+-----
 
 # 入门
 
@@ -50,9 +48,15 @@ brew install --HEAD libimobiledevice
 
 分为两部分，入门文档主要介绍第一部分。这两部分的内容都可以在[Google Codelas](https://codelabs.developers.google.com/?cat=Flutter)中找到。
 
+-----
+
+# 入门之坑
+
+* 使用命令行方式`flutter upgrade`升级需要谨慎，有一次升级后，flutter直接挂了。
+
 -- -- --
 
-<br>
+
 
 
 
@@ -100,12 +104,14 @@ Flutter运行机制。请看文章[Flutter原理解析](https://mp.weixin.qq.com
 
 
 
-# 参考
+#  参考
 
 1. [Flutter官网](https://flutter.io/get-started/install/)
 2. [Flutter Github](https://github.com/flutter/flutter)
 3. [Flutter中文社区](https://flutter-io.cn/#section-keynotes)
 4. [Flutter官网中文翻译](https://flutterchina.club/get-started/install/)
-5. [IOS toolchain安装异常解决](https://stackoverflow.com/questions/52602425/libusbmuxd-version-error-during-flutter-install/52604913#52604913)
-6. [为什么说Flutter是革命性的？](<http://www.infoq.com/cn/articles/why-is-flutter-revolutionary>)
-7. [Flutter原理解析](https://mp.weixin.qq.com/s/CQQXD0TrlbaNWjoClIcDtw)
+5. [书籍-Flutter实战](https://book.flutterchina.club/)
+6. [Flutter从配置安装到填坑指南详解](https://github.com/AweiLoveAndroid/Flutter-learning/blob/master/readme/Flutter%E4%BB%8E%E9%85%8D%E7%BD%AE%E5%AE%89%E8%A3%85%E5%88%B0%E5%A1%AB%E5%9D%91%E6%8C%87%E5%8D%97%E8%AF%A6%E8%A7%A3.md)
+7. [IOS toolchain安装异常解决](https://stackoverflow.com/questions/52602425/libusbmuxd-version-error-during-flutter-install/52604913#52604913)
+8. [为什么说Flutter是革命性的？](<http://www.infoq.com/cn/articles/why-is-flutter-revolutionary>)
+9. [Flutter原理解析](https://mp.weixin.qq.com/s/CQQXD0TrlbaNWjoClIcDtw)

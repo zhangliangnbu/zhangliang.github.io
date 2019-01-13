@@ -111,7 +111,7 @@ object DelegateExt {
 使用
 
 ```kotlin
-lass KotlinForAndroidBookActivity : AppCompatActivity() {
+class KotlinForAndroidBookActivity : AppCompatActivity() {
     private var pName:String by DelegateExt.preference(this, "person_name", "default")
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)

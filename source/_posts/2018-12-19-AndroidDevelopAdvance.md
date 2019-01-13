@@ -28,21 +28,31 @@ Android开发工程师进阶学习路线图 。
 
 ## 进阶
 
-* [《App研发录》](https://book.douban.com/subject/26649050/)。难度较低，适合初步进阶。
-* [《Android开发艺术探索》](https://book.douban.com/subject/26599538/)。要动手，随作者思路写示例以及查看源代码，否则没有效果。
-* [《高性能Android应用开发》](https://book.douban.com/subject/26891270/)。
-* [《打造高质量Android应用》](https://book.douban.com/subject/25866305/)
-* [《Android编程实战》](https://book.douban.com/subject/25911738/)。
+应用层和框架层深化学习
+
+* [《Android开发艺术探索》](https://book.douban.com/subject/26599538/)。
 * [《Android开发精要》](https://book.douban.com/subject/11530748/)
-* [《Android应用性能优化最佳实践》](https://book.douban.com/subject/27036747/)。可能很渣
-* [《Android应用性能优化》](https://book.douban.com/subject/19976838/)
-* [《Android移动性能实战》](https://book.douban.com/subject/27021800/)
-* [《移动App性能评测与优化》](https://book.douban.com/subject/26891415/)
-* [《Android软件安全与逆向分析》](https://book.douban.com/subject/20556210/)。
-* [《Android安全攻防权威指南》](https://book.douban.com/subject/26348151/)
-* [《Efficient Android Threading》](https://book.douban.com/subject/25900200/)
-* [《精彩绝伦的Android UI设计》](https://book.douban.com/subject/25769136/)
-* [《移动应用UI设计模式（第2版）》](https://book.douban.com/subject/26296679/)
+
+高质量APP开发
+
+* [《Android编程实战》](https://book.douban.com/subject/25911738/)。
+* [《App研发录》](https://book.douban.com/subject/26649050/)。简单的架构和Crash分析。
+* [《打造高质量Android应用》](https://book.douban.com/subject/25866305/)。各种实用技巧。
+* [《码农19期-Android好手》](http://www.ituring.com.cn/book/1705)。
+
+性能优化
+
+* [《高性能Android应用开发》](https://book.douban.com/subject/26891270/)。
+* [《Android应用性能优化最佳实践》](https://book.douban.com/subject/27036747/)。
+* [《Android移动性能实战》](https://book.douban.com/subject/27021800/)。
+* [《移动App性能评测与优化》](https://book.douban.com/subject/26891415/)。
+
+其他
+
+* 测试。
+* UI设计。[《精彩绝伦的Android UI设计》](https://book.douban.com/subject/25769136/)、[《移动应用UI设计模式（第2版）》]([https://book.douban.com/subject/26296679/)。
+* 安全。[《Android软件安全与逆向分析》](https://book.douban.com/subject/20556210/)、[《Android安全攻防权威指南》](https://book.douban.com/subject/26348151/)。
+* 其他。[《Efficient Android Threading》](https://book.douban.com/subject/25900200/)。
 
 ## 底层
 
@@ -134,18 +144,13 @@ Android开发工程师进阶学习路线图 。
 
 ---
 
-# 资讯
+# 其他
 
 * [Android 开发技术周报](https://androidweekly.io/)
 * [AndroidWeekly](http://androidweekly.net/confirmation)
 * 关注微博、Twitter和Google Plus上开发高手
-
----
-
-# 其他
-
-* [图解入门系列丛书](https://book.douban.com/series/34135?page=1)。
-* 科普读物系列。
+* 不错的个人博客: <https://keeganlee.me/>
+* 系类丛书。[图解入门系列](https://book.douban.com/series/34135?page=1)、科普、码农系列。
 
 ---
 
