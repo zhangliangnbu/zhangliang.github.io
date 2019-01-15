@@ -127,3 +127,39 @@ Small Tests或单元测试
 - [Android Testing Codelab](https://codelabs.developers.google.com/codelabs/android-testing/index.html#0)。教程不错，可惜依赖库不是最新的，也没有用Robolectric。
 
 实践。优化既有项目，测试工具类（单元测试或小型测试）、测试页面逻辑（简单UI测试或中型测试，可先优化MVP结构）、测试页面间逻辑（集成UI测试或大型测试）。
+
+---
+
+# Activities
+
+概述。Activity而不是APP，是交互的基本单位。
+
+生命周期。
+
+- `onCreate()`。一个实例只执行一次，此处完成初始化工作。
+- `onStart()`。可见，不能交互；执行很快。
+- `onResume()`。可见，获取焦点能交互。
+- `onPause()`。失去焦点不能交互；执行很快，不能做较重的操作，如操作数据库等。
+- `onStop()`。可执行较重操作，以及释放资源。
+- `onDestory()`。释放资源。
+
+UI状态的保存和恢复。持久化信息系统或本地，并从系统或本地恢复到Activity。
+
+回退栈和启动模式。哪个状态进栈的？
+
+"singleTask"。
+
+- 官方说会开启新栈，但实际上是否进入新栈与"taskAffinity"有关，启动Activity与新建Activity的"taskAffinity"不同则进入新栈，否在在同一栈内。两种方式，一，AndroidManifest文件中设置，`android:launchMode="singleTask"`,如果不设置"taskAffinity"，则不会开启新栈，只会在当前栈新建实例；二，如果使用代码`flags = Intent.FLAG_ACTIVITY_NEW_TASK`，则必须设置不同的"taskAffinity"，否则不能开始"singleTask"模式。
+- 发现了一个奇怪的情况，启动一个已经存在的"singleTask"的Activity，只是将其所在的任务栈带回前台，显示这个栈顶的Activity，而不是要启动的Activity。示例 Activity启动顺序： A->B->C，A和C设置为"singleTask"和不同的"taskAffinity"，执行C->A，则出现B，返回才看到A。
+
+进程和应用生命周期。
+
+- 进程优先级取决于其中所运行的组件活动状态。
+- 优先级从高到低：前台进程->可见进程->服务进程->缓存进程。
+
+
+
+参考
+
+- ["singleTask"模式 切换到新的栈中](https://blog.csdn.net/u012889434/article/details/47150739)
+- [启动模式"singleTask"和FLAG_ACTIVITY_NEW_TASK具有不同的行为！](https://blog.csdn.net/lincyang/article/details/6802017)

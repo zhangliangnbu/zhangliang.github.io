@@ -13,11 +13,11 @@ categories:
 
 年前准备、年后投简历，一个月时间。任务如下：
 
-* Android基础。Android Developer Guide。14D(1.7-1.20)
-* Java基础。部分基础题、《Effective Java》。3D(1.21-1.23)
-* Kotlin基础。官方文档、协程、Anko。3D(1.24-1.26)
-* 深度掌握。Android事件机制；IPC通信、Handler机制；Gradle构建？5D(1.27-1.31)
-* 其他。看面试题。10D(2.1-2.10)
+* Android基础。Android Developer Guide。21D(1.7-1.31)
+* Kotlin基础。官方文档、协程、Anko。3D(2.10-)
+* Java基础。部分基础题、《Effective Java》。3D(2.10-)
+* 深度掌握。Android事件机制；IPC通信、Handler机制；Gradle构建？5D(2.10-)
+* 其他。看面试题。10D(2.10-)
 
 ---
 
