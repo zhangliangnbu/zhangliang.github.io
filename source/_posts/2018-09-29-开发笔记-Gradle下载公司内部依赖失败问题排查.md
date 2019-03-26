@@ -8,7 +8,7 @@ tags:
 - Build
 - 开发笔记
 categories:
-- Android开发笔记
+- Android开发
 ---
 
 

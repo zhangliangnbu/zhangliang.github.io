@@ -5,7 +5,7 @@ tags:
 - Android
 - GridLayoutManager
 categories:
-- Android开发笔记
+- Android开发
 ---
 
 # 背景描述

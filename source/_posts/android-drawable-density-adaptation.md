@@ -5,7 +5,7 @@ tags:
 - Android
 - drawable
 categories:
-- Android开发笔记
+- Android开发
 ---
 
 # 问题

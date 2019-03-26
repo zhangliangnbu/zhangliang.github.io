@@ -1,12 +1,15 @@
 ---
-title: Android Developer Guide-2019
+layout: '[post]'
+title: 文档-Android Developer Guide 2019
+date: 2019-01-19 09:13:38
 tags:
-- android
-- guide
-- 文档
+  - android
+  - guide
+  - 文档
 categories:
-- 其他
+  - Android开发
 ---
+
 
 # 前言
 
@@ -147,19 +150,102 @@ UI状态的保存和恢复。持久化信息系统或本地，并从系统或本
 
 回退栈和启动模式。哪个状态进栈的？
 
-"singleTask"。
+SingleTask。
 
 - 官方说会开启新栈，但实际上是否进入新栈与"taskAffinity"有关，启动Activity与新建Activity的"taskAffinity"不同则进入新栈，否在在同一栈内。两种方式，一，AndroidManifest文件中设置，`android:launchMode="singleTask"`,如果不设置"taskAffinity"，则不会开启新栈，只会在当前栈新建实例；二，如果使用代码`flags = Intent.FLAG_ACTIVITY_NEW_TASK`，则必须设置不同的"taskAffinity"，否则不能开始"singleTask"模式。
 - 发现了一个奇怪的情况，启动一个已经存在的"singleTask"的Activity，只是将其所在的任务栈带回前台，显示这个栈顶的Activity，而不是要启动的Activity。示例 Activity启动顺序： A->B->C，A和C设置为"singleTask"和不同的"taskAffinity"，执行C->A，则出现B，返回才看到A。
+
+> 参考
+>
+> - ["singleTask"模式 切换到新的栈中](https://blog.csdn.net/u012889434/article/details/47150739)
+> - [启动模式"singleTask"和FLAG_ACTIVITY_NEW_TASK具有不同的行为！](https://blog.csdn.net/lincyang/article/details/6802017)
 
 进程和应用生命周期。
 
 - 进程优先级取决于其中所运行的组件活动状态。
 - 优先级从高到低：前台进程->可见进程->服务进程->缓存进程。
 
+Parcelables和Bundles。每个进程的Binder事务缓冲区目前限制在1M以内，对于操作比如`savedInstanceState`建议缓冲数据不超过50K。
 
+Fragments
+
+- 设计哲学。模块化(避免从Fragment操作其他Fragment)、可复用、UI布局适配。
+- 测试。验证交互一致性；API `FragmentScenario`。
+
+App Links。
+
+- Deep Link。可选择的APP；local intent-filter
+- Android App Link。直接进入APP；local intent-filter & remote Digital Asset Links JSON file
+
+---
+
+# Android Architecture Components  
+
+Lifecycle
+
+- 概述。继承`LifecycleOwner`的UI控件如Activity或Fragment，能够注册观察者`LifecycleObserver`来监测其生命周期方法。如此则能够让生命周期敏感的组件在自己内部处理相应的生命周期方法，从而保持UI控件如Activity或Fragment的简洁性。
+- 涉及类或接口。`LifecycleOwner`是`Lifecycle`的容器，使用`Lifecycle`添加观察者`LifecycleObserver`。
+- 使用。创建生命周期敏感的组件继承`LifecycleObserver`；添加方法或构造方法获取`Lifecycle`，并使用`Lifecycle.addObserver()`绑定自身；在UI控件中实例化生命周期敏感的组件即可。
+
+LiveData
+
+- 概述。LiveData只通知处于active状态（`STARTD`和`RESUMED`）的` LifecycleOwner `观察者更新，并在`DESTROYED`与观察者解绑。通知更新有两种情况：一，数据改变；二，观察者状态从inactive切换到active。
+- 优点。UI和数据保持同步（观察者模式）、无内存泄漏（自动解绑）、Stoppe状态Activities无Crash（inactive状态不通知更新）、无需手动处理生命周期事件、保持最新数据（后台切前台、配置改变如旋转）、资源分享（继承LiveData的系统服务）。
+- 使用。创建`LiveData`、UI线程创`Observer`并定义`onChanged()`方法、绑定`Observer`（生命周期相关或无关）。
+- 结合Room。Room提供返回LiveData对象的可观察查询，数据库更新时自动更新LiveData对象。
+- 其他。集成扩展、变换、组合。
+
+ViewModel
+
+- 概述。用生命周期管理的方式，存储和管理UI相关数据。
+- 生命周期。与所绑定的Lifecycle相关，在Created创建，在Activity Finished或Fragment Detached（并不再马上重新创建）之后销毁。
+- 用处。Fragment间共享数据，使用相同的Key的ViewModel。在Lifecycle由于Configuration改变而重新创建期间存储数据。
+
+Room
+
+- Dao。自动更新`LiveData`。返回`LiveData`的方法会监测数据库（可查看生成的方法实现），当数据库更新数据时，对应的`LiveData`也会更新。如：
+
+  ```kotlin
+     @Query("SELECT * from word_table ORDER BY word ASC")
+     LiveData<List<Word>> getAllWords();
+  ```
 
 参考
 
-- ["singleTask"模式 切换到新的栈中](https://blog.csdn.net/u012889434/article/details/47150739)
-- [启动模式"singleTask"和FLAG_ACTIVITY_NEW_TASK具有不同的行为！](https://blog.csdn.net/lincyang/article/details/6802017)
+- [Github-googlesamples/android-architecture-components](https://github.com/googlesamples/android-architecture-components)
+- [Codelabs-android-room-with-a-view](https://codelabs.developers.google.com/codelabs/android-room-with-a-view/#0)
+- [Github-googlesamples/android-sunflower](https://github.com/googlesamples/android-sunflower)
+
+---
+
+# User interface & navigation
+
+隐藏状态栏。
+
+```kotlin
+// Hide the status bar.
+window.decorView.systemUiVisibility = View.SYSTEM_UI_FLAG_FULLSCREEN
+// Remember that you should never show the action bar if the
+// status bar is hidden, so hide that too if necessary.
+actionBar?.hide()
+```
+
+三种菜单。应用层级别的*Options Menu*、当前页面的行为响应或内容菜单、下拉列表*Popup Menue*。
+
+---
+
+# Images and graphics
+
+优先使用WebP图片格式（API 17+）
+
+---
+
+# Background Tasks
+
+几种解决方案。WorkManager、Foreground services、AlarmManager、DownloadManager。
+
+异步编程解决方案。回调、Java 8的 CompletableFuture、Rx 编程、Kotlin协程。
+
+- [Kotlin 协程](http://johnnyshieh.me/posts/kotlin-coroutine-introduction/)
+- [Java线程的挂起和恢复](线程的挂起和恢复)
+

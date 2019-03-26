@@ -20,7 +20,7 @@ Android开发工程师进阶学习路线图 。
 
 ## 基础
 
-* [《Android Developer Guides》](https://developer.android.com/guide/)。官方用户指南是一切入门书籍和文档的基础。
+* [Android Developer Guides](https://developer.android.com/guide/)。官方用户指南是一切入门书籍和文档的基础；会持续更新，每年通读一遍。
 * [Android Developer官网](https://developer.android.com/)。官方其他资料，如API、支持库、SDK新特性、Android Studio文档等。
 * [《Android权威编程指南》](https://book.douban.com/subject/26789110/)。涵盖面全面，用实例引导开发，非常值得一读。
 * [《Android应用程序开发权威指南（第四版）》](https://book.douban.com/subject/26340518/)。
@@ -148,8 +148,9 @@ Android开发工程师进阶学习路线图 。
 
 * [Android 开发技术周报](https://androidweekly.io/)
 * [AndroidWeekly](http://androidweekly.net/confirmation)
+* [给高级Android工程师的进阶手册](https://hencoder.com/)
 * 关注微博、Twitter和Google Plus上开发高手
-* 不错的个人博客: <https://keeganlee.me/>
+* 不错的个人博客: <https://keeganlee.me/>、http://blog.zhaiyifan.cn/、http://johnnyshieh.me/
 * 系类丛书。[图解入门系列](https://book.douban.com/series/34135?page=1)、科普、码农系列。
 
 ---

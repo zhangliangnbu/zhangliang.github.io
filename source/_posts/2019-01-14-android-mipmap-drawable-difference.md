@@ -6,12 +6,12 @@ tags:
 - mipmap
 - drawable
 categories:
-- Android开发笔记
+- Android开发
 ---
 
 # 区别
 
-在apk安装的时候，`mipmap-xxx/`下的所有分辨率的图片都会保留，而`drawablexxx/`下的图片只有保留适配设备分辨率的图片，其余图片会丢弃掉，减少了APP安装尺寸。
+在apk安装的时候，`mipmap-xxx/`下的所有分辨率的图片都会保留，而`drawablexxx/`下的图片只有保留适配设备分辨率的图片，其余图片会丢弃掉，减少了APP安装大小。
 
 > It’s best practice to place your app icons in `mipmap-` folders (not the `drawable-`folders) because they are used at resolutions different from the device’s current density。——from [Android Developers Blog](https://android-developers.googleblog.com/2014/10/getting-your-apps-ready-for-nexus-6-and.html)
 >

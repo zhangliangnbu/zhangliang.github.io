@@ -39,7 +39,7 @@ Bintray平台上可以托管多种类型的库，如比较流行的Maven和npm�
 
 对于Android项目，必须上传的文件包括：
 
-- `.aar`文件。Android构件特有文件，类似于`.jar`文件，但包含一些资源文件。
+- `.aar`文件。[Android ARchive](https://developer.android.com/studio/projects/android-library)，Android构件特有文件，类似于`.jar`文件[Java ARchive](https://en.wikipedia.org/wiki/JAR_(file_format))，但包含一些资源文件。
 - `.pom`文件。Maven仓库中必须有的文件，XML格式，包含项目的所有信息，详情请见[POM Reference](https://maven.apache.org/pom.html)。
 
 有些Maven仓库审核比较严格，需要上传另外的两个文件：
