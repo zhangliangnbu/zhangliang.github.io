@@ -74,9 +74,9 @@ Small Tests或单元测试
 
 ---
 
-# 知识点和框架深入
+# 框架
 
-JUnit
+Junit
 
 Mockito
 
@@ -95,6 +95,35 @@ Robolectric4.0完全兼容AndroidX Test库，尽量使用AndroidX API。
 Dagger
 
 异步代码测试
+
+
+
+# 实践
+
+第一阶段只使用Junit和基础mockito即可，只写Java代码测试以及MVP框架中的p层测试，原因如下：
+
+- mock框架太多。mock框架太多，开始阶段只需要熟练使用使用最广泛的版本mockito即可。
+- robolectric坑太多。每个版本的API改变较大；4.0之后与AndroidX兼容，但其实很多项目都没有使用AndroidX。
+- 仪器测试太耗时。
+
+```groovy
+// junit
+testImplementation 'junit:junit:4.12'
+
+// 基础mockito
+testImplementation 'org.mockito:mockito-core:2.8.47'
+testImplementation 'org.mockito:mockito-inline:2.8.47'
+
+// dagger
+implementation 'com.google.dagger:dagger:2.21'
+kapt 'com.google.dagger:dagger-compiler:2.21'
+```
+
+
+
+第二阶段可以增加仪器测试
+
+第三阶段，待AndroidX使用比较广泛后，可增加Robolectric。
 
 ---
 

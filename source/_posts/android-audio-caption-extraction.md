@@ -6,7 +6,7 @@ tags:
   - audio
   - caption
 categories:
-  - Android音视频
+  - Android开发
 ---
 
 # 流程

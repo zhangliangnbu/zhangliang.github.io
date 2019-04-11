@@ -42,7 +42,7 @@ Android开发工程师进阶学习路线图 。
 
 性能优化
 
-* [《高性能Android应用开发》](https://book.douban.com/subject/26891270/)。
+* [《高性能Android应用开发》](https://book.douban.com/subject/26891270/)。(主)
 * [《Android应用性能优化最佳实践》](https://book.douban.com/subject/27036747/)。
 * [《Android移动性能实战》](https://book.douban.com/subject/27021800/)。
 * [《移动App性能评测与优化》](https://book.douban.com/subject/26891415/)。
