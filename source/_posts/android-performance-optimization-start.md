@@ -1,5 +1,4 @@
 ---
-layout: '[draft]'
 title: Android性能优化-开始
 date: 2019-03-30 09:08:34
 tags:

@@ -205,4 +205,5 @@ android.applicationVariants.all { variant ->
 3. [任玉刚 Gradle从入门到实战 - Groovy基础](https://blog.csdn.net/singwhatiwanna/article/details/76084580)
 4. [Gradle DSL Javadoc](https://docs.gradle.org/current/javadoc/)
 5. [使用Groovy开发之新特性](https://www.jianshu.com/p/ba55dc163dfd)
+6. [Gradle构建](https://blog.csdn.net/innost/article/details/48228651)
 

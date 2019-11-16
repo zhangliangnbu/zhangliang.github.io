@@ -71,11 +71,30 @@ Activity的Extra和Fragment的Argument Bundle参数的Key值，应该存在使�
         <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
         <item name="colorAccent">@color/colorAccent</item>
 
-        <!--覆盖主题样式-->
+        <!--页面和对话框背景颜色-->
         <item name="android:colorBackground">@color/white_light</item>
+     
+      	<!--页面和背景颜色-->
+      	<item name="android:colorBackground">@color/white_light</item>
+      
         <item name="buttonStyle">@style/NormalButton</item>
     </style>
+
+
 ```
+
+
+
+You can also define:
+
+- textColor - The default text color of any given view
+- textColorPrimary - The default text color for enabled buttons and Large Textviews
+- textColorSecondary - The default text color for Medium and Small Textviews
+- textColorTertiary - ?
+
+(Source [TextColor vs TextColorPrimary vs TextColorSecondary](https://stackoverflow.com/questions/39070040/textcolor-vs-textcolorprimary-vs-textcolorsecondary))
+
+
 
 
 

@@ -134,3 +134,4 @@ BUILD SUCCESSFUL in 2s
 1. [Groovy 官网](http://www.groovy-lang.org/learn.html)
 2. [Gradle官网](https://gradle.org/)
 3. [Android开发者官网-Configure your build](https://developer.android.com/studio/build/)
+4. [Gradle轻松入门](https://blog.csdn.net/innost/article/details/48228651)

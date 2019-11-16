@@ -1,5 +1,5 @@
 ---
-title: Git基础与命令
+title: Git-基础与命令
 date: 2018-10-23 10:18:06
 update: 2018-10-23 10:18:06
 tags:
@@ -138,6 +138,9 @@ $ git reflog
 ```bash
 # 版本回退。回退到历史版本
 # 其中“HEAD^”表示上一个版本，“HEAD^^”表示上上个版本
+# 回退到当前版本，会清除所有修改
+$ git reset --hard HEAD^
+# 回退到上个版本
 $ git reset --hard HEAD^
 # 版本切换。回退到历史版本或跳到最新版本。
 # “1094a”表示指定commit id的版本
@@ -166,6 +169,7 @@ $ git branch
 $ git branch -a
 # 切换分支
 $ git checkout dev
+$ git checkout tag-v1.0 -b hotfix-v10-xxx
 ```
 
 **命令-合并**

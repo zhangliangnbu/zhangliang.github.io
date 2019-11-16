@@ -150,7 +150,7 @@ Android开发工程师进阶学习路线图 。
 * [AndroidWeekly](http://androidweekly.net/confirmation)
 * [给高级Android工程师的进阶手册](https://hencoder.com/)
 * 关注微博、Twitter和Google Plus上开发高手
-* 不错的个人博客: <https://keeganlee.me/>、http://blog.zhaiyifan.cn/、http://johnnyshieh.me/
+* 不错的个人博客: <https://keeganlee.me/>、http://blog.zhaiyifan.cn/、http://johnnyshieh.me/、https://blog.csdn.net/innost?t=1
 * 系类丛书。[图解入门系列](https://book.douban.com/series/34135?page=1)、科普、码农系列。
 
 ---
